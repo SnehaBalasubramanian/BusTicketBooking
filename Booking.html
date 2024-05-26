@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+
+    <title>LetsGO</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: medium;
+        }
+
+        #card3 {
+            display: flex;
+            flex-direction: row;
+            padding: 50px;
+            margin-left: 30px;
+        }
+
+        .section-row {
+            display: flex;
+            flex-direction: row;
+            margin-right: 10px;
+            justify-content: center;
+        }
+
+        .section {
+            width: 80px;
+            height: 40px;
+            border: 1px solid #ccc;
+            text-align: center;
+            line-height: 50px;
+            cursor: pointer;
+            margin-right: 10px;
+            margin-bottom: 10px;
+            font-family: "Poppins", sans-serif;
+            font-weight: bold;
+        }
+
+
+
+        .no-wrap {
+            flex-wrap: nowrap;
+        }
+
+        #container {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .cart-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+            align-items: center;
+        }
+
+        .delete-btn {
+            background-color: #0d7223;
+            color: #fff;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+            margin-left: 50px;
+        }
+
+        .single-section .section p {
+            padding-left: 30px;
+        }
+
+        .section-pair .section p {
+            padding-left: 30px;
+        }
+
+        .cart-item-content {
+            display: flex;
+            align-items: center;
+        }
+
+        .cart-item-text {
+            margin-right: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <h4 class="name" style="font-size: 38px; font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif">AIMO</h4>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Routes</a></li>
+                <li><a href="#">Offers</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+            <button type="button" class="btn btn-light" style="width: auto; height: fit-content; margin-top: 15px;">Log
+                In</button>
+        </nav>
+    </header>
+
+    <div class="card2" style="color: gray;">
+        <div class="sec">
+            <div class="five" style="line-height: 37px;">
+                <h3 style="color: rgb(0, 0, 0);">Rathimeena Travels</h3>
+                <p>A/C Sleeper 2+1</p>
+            </div>
+            <div class="1" style="line-height: 29px;">
+                <h4 style="font-size: 15px; ">11.30</h4>
+                <h3 style="font-size: 20px; color: rgb(0, 0, 0);">Kumbakonam</h3>
+                <p>Near Rathimeena Office</p>
+            </div>
+
+            <p >8h 45m</p>
+
+
+            <div class="2" style="line-height: 29px;">
+                <h4 style="font-size: 15px;">05.45</h4>
+                <h3 style="font-size: 20px; color: rgb(0, 0, 0);">Bangalore</h3>
+                <p>Santhi Nagar</p>
+            </div>
+
+            <p class="sell">INR <b>885</b></p>
+
+            <button class="four"><i class="fa-regular fa-star"></i>4.3</button>
+
+            <div class="fives">
+                <p>10 double seats</p>
+                <p>5 Single Seat</p>
+            </div>
+        </div>
+    </div>
+    <div class="parent-container">
+        <div class="row">
+            <div class="col-6">
+                <p class="text" style="width: fit-content; height: fit-content; padding: 5px; background-color: rgb(246, 214, 255); margin-top: 100px; margin-left: 70px;">Click on an Available seat to proceed with your transaction.</p>
+                <div id="card3">
+                   
+                </div>
+              
+            </div>
+            
+            <div class="col-6">
+                <div id="container">
+                    <h2 style="margin-left: 20px; margin-top: 20px;">Booking Details:</h2>
+                    <div id="cartItems" style="margin-top: 20px; margin-left: 20px;"></div>
+                    <button type="button" class="btn btn-danger proceed-button">Proceed To Pay</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-column">
+                <h3>LETSgo</h3>
+                <p style="width: 60%;">Ride today for a comfortable, on-time ride! A transportation network offering
+                    mobility platform in your vicinity!</p>
+            </div>
+            <div class="footer-column">
+                <h3>QuickLinks</h3>
+                <ul>
+                    <li><a href="#">About us</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-column" style="margin-left: 50px;">
+                <h3>Information</h3>
+                <ul>
+                    <li><a href="#">Bus Tickets</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                </ul>
+            </div>
+            <div class="footer-column" style="margin-left: 50px;">
+                <h3>Get in touch</h3>
+                <p>JMD Megapolis, Unit No. 220, 2nd Floor, Sohna Road, Sector 48, Gurugram, Haryana- 122001</p>
+                <p>+91 9667676919</p>
+                <div class="social-icons" style="color: black;">
+                    <img src="asset/facebook1.webp" alt="Facebook">
+                    <img src="asset/60580.png" alt="Twitter">
+                    <img src="asset/lik.webp" alt="LinkedIn">
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <script>
+        let doubleSeats = [
+            { id: 0, name: "U1", price: 850 },
+            { id: 1, name: "U2", price: 850 },
+            { id: 2, name: "U3", price: 850 },
+            { id: 3, name: "U4", price: 850 },
+            { id: 4, name: "U5", price: 850 },
+            { id: 5, name: "U6", price: 850 },
+            { id: 6, name: "U7", price: 850 },
+            { id: 7, name: "U8", price: 850 },
+            { id: 8, name: "U9", price: 850 },
+            { id: 10, name: "U11", price: 850 }
+        ];
+
+        let singleSeats = [
+            { id: 10, name: "U11", price: 850 },
+            { id: 11, name: "U12", price: 850 },
+            { id: 12, name: "U13", price: 850 },
+            { id: 13, name: "U14", price: 850 },
+            { id: 14, name: "U15", price: 850 },
+
+        ];
+
+        let cartItems = [];
+
+
+        let doubleRow = document.createElement("div");
+        doubleRow.classList.add("section-row");
+        doubleRow.classList.add("no-wrap");
+
+        for (let i = 0; i < doubleSeats.length; i += 2) {
+            let doubleSeatPairDiv = document.createElement("div");
+            doubleSeatPairDiv.classList.add("section-pair");
+
+            doubleSeats.slice(i, i + 2).forEach(seat => {
+                doubleSeatPairDiv.innerHTML += `
+                    <div class="section" style="margin-bottom: 10px;" data-id="${seat.id}" onclick="cli(this)">
+                        <p>${seat.name}</p> 
+                    </div>
+                `;
+            });
+
+            doubleRow.appendChild(doubleSeatPairDiv);
+        }
+
+        document.getElementById("card3").appendChild(doubleRow);
+
+
+        let singleRow = document.createElement("div");
+        singleRow.classList.add("section-row");
+
+        singleSeats.forEach(seat => {
+            let singleSeatDiv = document.createElement("div");
+            singleSeatDiv.classList.add("single-section");
+            singleSeatDiv.innerHTML = `
+                <div class="section" data-id="${seat.id}" onclick="cli(this)">
+                    <p>${seat.name}</p> 
+                </div>
+            `;
+            singleRow.appendChild(singleSeatDiv);
+        });
+
+        document.getElementById("card3").appendChild(singleRow);
+
+        function cli(cls) {
+            cls.classList.toggle("selected");
+            updateCart();
+        }
+
+        function updateCart() {
+            const cartItemsContainer = document.getElementById("cartItems");
+            cartItemsContainer.innerHTML = "";
+            const selectedSeats = document.querySelectorAll(".section.selected");
+            cartItems = [];
+            selectedSeats.forEach(seat => {
+                const seatId = seat.getAttribute("data-id");
+                const selectedSeat = seatDetails(parseInt(seatId));
+                cartItems.push(selectedSeat);
+                const cartItem = document.createElement("div");
+                cartItem.classList.add("cart-item");
+                const cartItemContent = document.createElement("div");
+                cartItemContent.classList.add("cart-item-content");
+                const cartItemText = document.createElement("div");
+                cartItemText.classList.add("cart-item-text");
+                cartItemText.innerHTML = `<p>Seat: ${selectedSeat.name}, Price: ${selectedSeat.price}</p>`;
+                cartItemContent.appendChild(cartItemText);
+                const deleteButton = document.createElement("button");
+                deleteButton.textContent = "Delete";
+                deleteButton.classList.add("delete-btn");
+                deleteButton.addEventListener("click", () => {
+                    const index = cartItems.findIndex(item => item.id === selectedSeat.id);
+                    if (index !== -1) {
+                        cartItems.splice(index, 1);
+                        seat.classList.remove("selected");
+                        updateCart();
+                    }
+                });
+                cartItemContent.appendChild(deleteButton);
+                cartItem.appendChild(cartItemContent);
+                cartItemsContainer.appendChild(cartItem);
+            });
+        }
+
+        function seatDetails(id) {
+            const allSeats = [...doubleSeats, ...singleSeats];
+            return allSeats.find(seat => seat.id === id);
+        }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
